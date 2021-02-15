@@ -43,7 +43,7 @@ export default function StickyFooter() {
     <div className={classes.root}>
       <CssBaseline />
       <footer className={classes.footer}>
-        <Container maxWidth="sm">
+        <Container maxWidth="lg">
           <Typography variant="body1">My sticky footer can be found here.</Typography>
           <Copyright />
         </Container>

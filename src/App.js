@@ -6,16 +6,19 @@ import Register from "./views/Register/Register";
 import NotFound from "./views/NotFound/NotFound";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Checkout from "./components/Checkout";
 import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
+import Dashboard from './views/Admin/Dashboard';
+
 
 const useStyles = makeStyles((theme) => ({
-  // root: {
-  //   display: 'flex',
-  //   flexDirection: 'column',
-  //   minHeight: '100vh',
-  // },
+  root: {
+    // display: 'flex',
+    // flexDirection: 'column',
+    minHeight: '100vh',
+  },
   // main: {
   //   marginTop: theme.spacing(8),
   //   marginBottom: theme.spacing(2),
@@ -31,11 +34,15 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const classes = useStyles();
     return (
-      <div>
-        <Container component="main" className={classes.main} maxWidth="lg">
+      <React.Fragment>
+        <CssBaseline />
+        <Container component="main" className={classes.root}>
         <Router> 
       <Header/>
         <Switch>
+          <Route path="/admin">
+            <Dashboard/>
+          </Route>
            <Route exact path="/home">
              <Home/>
            </Route>
@@ -45,11 +52,14 @@ function App() {
            <Route path="/register">
               <Register/>
            </Route>
+           <Route path="/checkout">
+              <Checkout/>
+           </Route>
         </Switch>
       <Footer/>
       </Router>
       </Container>
-      </div>
+      </React.Fragment>
     );
   }
 

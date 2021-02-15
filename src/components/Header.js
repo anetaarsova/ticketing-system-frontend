@@ -6,11 +6,14 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import Fab from '@material-ui/core/Fab';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import Zoom from '@material-ui/core/Zoom';
+import MenuIcon from '@material-ui/icons/Menu';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,6 +21,18 @@ const useStyles = makeStyles((theme) => ({
     bottom: theme.spacing(2),
     right: theme.spacing(2),
   },
+
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+  },
+  bar: {
+    marginLeft: theme.spacing(0),
+    marginRight: theme.spacing(0)
+  }
+
 }));
 
 function ScrollTop(props) {
@@ -59,12 +74,25 @@ ScrollTop.propTypes = {
 };
 
 export default function BackToTop(props) {
+  const classes = useStyles();
+  const history = useHistory();
+
+  const handleLogin = () => {
+    history.push("/login");
+   }; 
+
   return (
     <React.Fragment>
       <CssBaseline />
-      <AppBar>
-        <Toolbar>
-          <Typography variant="h6">Scroll to see button</Typography>
+      <AppBar position="static" className={classes.bar}>
+      <Toolbar>
+          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" className={classes.title}>
+            News
+          </Typography>
+          <Button color="inherit" onClick={handleLogin}>Login</Button>
         </Toolbar>
       </AppBar>
       <Toolbar id="back-to-top-anchor" />
