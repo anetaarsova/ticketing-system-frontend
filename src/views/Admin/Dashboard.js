@@ -132,7 +132,7 @@ export default function Dashboard() {
     <div className={classes.root}>
       <CssBaseline />
       <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
-        <Toolbar className={classes.toolbar}>
+        {/* <Toolbar className={classes.toolbar}>
           <IconButton
             edge="start"
             color="inherit"
@@ -150,7 +150,7 @@ export default function Dashboard() {
               <NotificationsIcon />
             </Badge>
           </IconButton>
-        </Toolbar>
+        </Toolbar> */}
       </AppBar>
       <Drawer
         variant="permanent"

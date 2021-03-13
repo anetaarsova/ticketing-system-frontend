@@ -80,7 +80,9 @@ export default function BackToTop(props) {
   const handleLogin = () => {
     history.push("/login");
    }; 
-
+   const handleHome = () => {
+    history.push("/home");
+   }; 
   return (
     <React.Fragment>
       <CssBaseline />
@@ -89,8 +91,8 @@ export default function BackToTop(props) {
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            News
+          <Typography variant="h6" className={classes.title} onClick={handleHome}>
+            Ticketing System
           </Typography>
           <Button color="inherit" onClick={handleLogin}>Login</Button>
         </Toolbar>

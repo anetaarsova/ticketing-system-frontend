@@ -16,7 +16,7 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import ShoppingCartRoundedIcon from '@material-ui/icons/ShoppingCartRounded';
-import { useHistory } from "react-router-dom";
+import { useHistory,Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -99,9 +99,10 @@ export default function RecipeReviewCard() {
         >
           <ExpandMoreIcon />
         </IconButton>
-        <ShoppingCartRoundedIcon
-          onClick={openCheckout}
-         />
+        <IconButton aria-label="add to cart"
+          onClick={openCheckout}>
+            <ShoppingCartRoundedIcon />
+          </IconButton>
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
