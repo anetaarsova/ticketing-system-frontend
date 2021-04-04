@@ -11,6 +11,9 @@ import Container from "@material-ui/core/Container";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { makeStyles } from "@material-ui/core/styles";
 import Dashboard from "./views/Admin/Dashboard";
+import UserDashboard from "./views/user/Dashboard/UserDashboard";
+import AddTicket from "./views/user/AddTicket";
+import { Provider } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -55,6 +58,12 @@ function App() {
           </Route>
           <Route path="/checkout">
             <Checkout />
+          </Route>
+          <Route path="/dashboard">
+            <UserDashboard />
+          </Route>
+          <Route path="/upload">
+            <AddTicket />
           </Route>
         </Switch>
         <Footer />

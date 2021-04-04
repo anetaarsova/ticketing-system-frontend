@@ -80,8 +80,10 @@ export class Register extends Component {
     const data = this.state;
     axios.post("http://127.0.0.1:8000/api/auth/register", data).then((res) => {
       console.log(res);
+      console.log(res.data.user);
+      const user = JSON.stringify(res.data.user);
       localStorage.setItem("token", res.data.access_token);
-      localStorage.setItem("user", res.data.user);
+      localStorage.setItem("user", user);
       return <Redirect to="/home" />;
     });
   };
