@@ -92,8 +92,9 @@ export class Login extends Component {
     const data = this.state;
     axios.post("http://127.0.0.1:8000/api/auth/login", data).then((res) => {
       console.log(res);
+      const user = JSON.stringify(res.data.user);
       localStorage.setItem("token", res.data.access_token);
-      localStorage.setItem("user", res.data.user);
+      localStorage.setItem("user", user);
       // <Redirect to="/home" />;
     });
   };
