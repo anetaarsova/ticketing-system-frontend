@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Container from "@material-ui/core/Container";
-import Ticket from "./Ticket";
+import TicketComponent from "../ticket/Dashboard/TicketComponent";
+import TicketContainer from "../ticket/Dashboard/TicketContainer";
 import { Redirect } from "react-router-dom";
 class Home extends Component {
   constructor() {
@@ -19,7 +20,7 @@ class Home extends Component {
     return (
       <Container>
         <div>
-          <Ticket />
+          <TicketContainer />
         </div>
       </Container>
     );

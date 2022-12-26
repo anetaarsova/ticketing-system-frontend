@@ -9,12 +9,18 @@ const enhancers = [];
 
 const middleware = [thunk, routerMiddleware(history)];
 
-const composedEnhancers = compose(applyMiddleware(...middleware), ...enhancers);
-const devToolsExtension = window.__REDUX_DEVTOOLS_EXTENSION__;
+const composedEnhancers = compose(
+  applyMiddleware(...middleware),
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+//const devToolsExtension = window.__REDUX_DEVTOOLS_EXTENSION__;
+// const devToolsExtension =
+//   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ &&
+//   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__();
 
-if (typeof devToolsExtension === "function") {
-  enhancers.push(devToolsExtension());
-}
+// if (typeof devToolsExtension === "function") {
+//   enhancers.push(devToolsExtension());
+// }
 const initialState = {};
 
 const store = createStore(

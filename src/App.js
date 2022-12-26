@@ -2,18 +2,16 @@ import React from "react";
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import store, { history } from "./store";
 import Home from "./components/Home";
-import Login from "./views/Login/Login";
-import Register from "./views/Register/Register";
-import NotFound from "./views/NotFound/NotFound";
+import LoginContainer from "./user/Login/LoginContainer";
+import RegisterComponent from "./user/RegisterComponent";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Checkout from "./components/Checkout";
 import Container from "@material-ui/core/Container";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import { makeStyles } from "@material-ui/core/styles";
-import Dashboard from "./views/Admin/Dashboard";
-import UserDashboard from "./views/user/Dashboard/UserDashboard";
-import TicketContainer from "./views/user/Dashboard/TicketContainer";
+import Dashboard from "./Admin/Dashboard";
+import UserDashboard from "./ticket/Dashboard/UserDashboard";
+import TicketContainer from "./ticket/Dashboard/TicketContainer";
 import { Provider } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
@@ -52,11 +50,11 @@ function App() {
             </Route>
             <Route path="/login">
               <Container>
-                <Login />
+                <LoginContainer />
               </Container>
             </Route>
             <Route path="/register">
-              <Register />
+              <RegisterComponent />
             </Route>
             <Route path="/checkout">
               <Checkout />
